@@ -1,0 +1,38 @@
+[
+  {
+    "address": "Urb. Los Arroyos, C/Ocho, Bloque B, 1B",
+    "city": "El Escorial",
+    "id": 1,
+    "name": "client_1",
+    "nif": "53660677K",
+    "province": "Madrid",
+    "zip_code": "28280"
+  },
+  {
+    "address": "Urb. Los Arroyos, C/Ocho, Bloque B, 1B",
+    "city": "El Escorial",
+    "id": 2,
+    "name": "client_2",
+    "nif": "53660677K",
+    "province": "Madrid",
+    "zip_code": "28280"
+  },
+  {
+    "address": "Urb. Los Arroyos, C/Ocho, Bloque B, 1B",
+    "city": "El Escorial",
+    "id": 3,
+    "name": "client_3",
+    "nif": "53660677K",
+    "province": "Madrid",
+    "zip_code": "28280"
+  },
+  {
+    "address": "Urb. Los Arroyos, C/Ocho, Bloque B, 1B",
+    "city": "El Escorial",
+    "id": 4,
+    "name": "client_4",
+    "nif": "53660677K",
+    "province": "Madrid",
+    "zip_code": "28280"
+  }
+  ]

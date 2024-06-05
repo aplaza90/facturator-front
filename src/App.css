@@ -1,0 +1,52 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+main {
+  dispaly: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.payers {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.payer-details {
+  display: flex;
+  justify-content: start;
+  gap: 20px
+}
+
+details {
+  margin-bottom: 10px;
+  min-width: 90%;
+}
+
+li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline ;
+}
+
+.edit-button {
+  height: 100%;
+}
