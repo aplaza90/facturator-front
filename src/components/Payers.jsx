@@ -1,4 +1,4 @@
-import { Payer } from './payer'
+import { Payer } from './Payer'
 // eslint-disable-next-line react/prop-types
 export function ListOfPayers ({ payers }) {
   return (

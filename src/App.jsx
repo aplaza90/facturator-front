@@ -1,32 +1,12 @@
 import './App.css'
-import { useEffect, useState, useRef, useCallback } from 'react'
-import { Payers } from './components/payers'
+import { useCallback, useContext } from 'react'
+import { Payers } from './components/Payers'
 import { usePayers } from './hooks/usePayers.js'
 import debounce from 'just-debounce-it'
-
-function useSearch () {
-  const [search, updateSearch] = useState('')
-  const [error, setError] = useState(null)
-  const isFirstImput = useRef(true)
-
-  useEffect(() => {
-    if (isFirstImput.current) {
-      isFirstImput.current = search === ''
-      return
-    }
-    if (search === '') {
-      setError('se recuperarán todos los pagadoeres')
-      return
-    }
-    if (search !== '') {
-      setError(null)
-    }
-  }, [search])
-  return { search, updateSearch, error }
-}
+import { SearchContext } from './context/search.jsx'
 
 function App () {
-  const { search, updateSearch, error } = useSearch()
+  const { search, updateSearch, error } = useContext(SearchContext)
   const { payers, getPayers } = usePayers({ search })
 
   const debouncedGetPayers = useCallback(
