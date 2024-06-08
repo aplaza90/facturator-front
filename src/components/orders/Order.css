@@ -1,0 +1,12 @@
+.order-and-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+
+.edit-button ~ input:checked ~ .edit-form {
+  display: block; 
+}
+

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './EditPayerForm.css'
 
 import { useField } from '../hooks/useField'
