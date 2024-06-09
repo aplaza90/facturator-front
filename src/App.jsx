@@ -1,4 +1,3 @@
-import './App.css'
 import { PayersPage } from './pages/PayersPage.jsx'
 import { Router } from './Router.jsx'
 import { OrderSearchProvider } from './context/orderSearch.jsx'

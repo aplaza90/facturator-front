@@ -1,4 +1,4 @@
-.order-and-buttons {
+.payer-and-buttons {
   display: flex;
   align-items: flex-start;
   gap: 5px;
@@ -13,5 +13,3 @@
   padding-top: 20px;
 
 }
-
-

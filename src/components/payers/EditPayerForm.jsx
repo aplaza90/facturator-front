@@ -1,6 +1,6 @@
 import './EditPayerForm.css'
 
-import { useField } from '../hooks/useField'
+import { useField } from '../../hooks/useField'
 
 export function EditPayerForm ({ payer, hiddenEdit, setHiddenEdit }) {
   const name = useField({ initValue: payer.name })

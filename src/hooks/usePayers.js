@@ -8,7 +8,6 @@ export function usePayers ({ search }) {
   const previosusSearch = useRef(search)
 
   const getPayers = useCallback(async ({ search }) => {
-    if (search === previosusSearch.current) return
     try {
       setLoading(true)
       setError(null)

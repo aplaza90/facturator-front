@@ -1,6 +1,6 @@
 import { useId } from "react";
 import './EditPayerButton.css'
-import { EdiIcon } from './Icons.jsx'
+import { EdiIcon } from '../Icons.jsx'
 
 export function EditPayerButton ({ hiddenEdit, setHiddenEdit }) {
   const formCheckboxId = useId()

@@ -1,8 +1,9 @@
 import { useCallback, useContext } from 'react'
 import debounce from 'just-debounce-it'
-import { Payers } from '../components/Payers'
+import { Payers } from '../components/payers/Payers'
 import { Link } from '../components/Link'
 import { PayerSearchContext } from '../context/payerSearch'
+import './PayersPage.css'
 
 export function PayersPage () {
   const {

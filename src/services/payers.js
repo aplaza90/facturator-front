@@ -20,3 +20,15 @@ export const searchPayers = async ({ search }) => {
     throw new Error('Error while retrieving and parsing payers')
   }
 }
+
+export const deletePayer = async ({ id }) => {
+  const url = `http://localhost:5005/payer/${id}`
+  try {
+    const response = await fetch(url, { method: 'DELETE' })
+    const json = await response.json()
+    console.log('payer deleted')
+    return json
+  } catch (e) {
+    throw new Error('Error while deleting the payer')
+  }
+}

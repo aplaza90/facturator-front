@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { EditPayerButton } from './EditPayerButton'
 import { EditPayerForm } from './EditPayerForm'
 import './Payer.css'
+import { DeletePayer } from './DeletePayer'
 
 export function Payer ({ payer }) {
   const [hiddenEdit, setHiddenEdit] = useState(true)
@@ -19,7 +20,10 @@ export function Payer ({ payer }) {
               <p>{payer.province}</p>
             </article>
           </details>
-          <EditPayerButton hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} />
+          <div className='button-box'>
+            <EditPayerButton hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} />
+            <DeletePayer id={payer.id} />
+          </div>
         </div>
         <EditPayerForm payer={payer} hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} />
       </div>

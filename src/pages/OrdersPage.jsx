@@ -1,16 +1,15 @@
-import { useCallback, useContext, useId} from 'react'
+import { useCallback, useContext } from 'react'
 import debounce from 'just-debounce-it'
 import { Orders } from '../components/orders/Orders'
 import { Link } from '../components/Link'
 import './OrdersPage.css'
-import { UploadIcon } from '../components/Icons'
 import { OrderSearchContext } from '../context/orderSearch'
+import { UploadFileForm } from '../components/orders/UploadFileForm'
 
 export function OrdersPage () {
   const {
     search, updateSearch, error, orders, getOrders
   } = useContext(OrderSearchContext)
-  const uploadCheckboxId = useId()
 
   const debouncedGetOrders = useCallback(
     debounce(search => {
@@ -38,17 +37,7 @@ export function OrdersPage () {
             <input onChange={handleChange} value={search} name='query' placeholder='Name' />
             <button>Buscar</button>
           </form>
-          <label className='upload-button' htmlFor={uploadCheckboxId}>
-            <UploadIcon />
-          </label>
-          <input id={uploadCheckboxId} type='checkbox' style={{ display: 'none' }} />
-
-          <aside className='upload-form-container'>
-            <form className='upload-form'>
-              <input type='file' />
-              <button>Subir</button>
-            </form>
-          </aside>
+          <UploadFileForm />
         </div>
         {error}
       </header>
