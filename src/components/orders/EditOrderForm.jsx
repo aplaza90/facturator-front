@@ -10,7 +10,7 @@ export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setHiddenEdit(!hiddenEdit)
+    setHiddenEdit(true)
     const data = {
       number: number.value,
       date: date.value,

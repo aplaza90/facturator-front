@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { EditOrderButton } from './EditOrderButton'
 import { EditOrderForm } from './EditOrderForm'
 import './Order.css'
-import { DeleteIcon } from '../Icons'
 import { DeleteOrder } from './DeleteOrder'
 
 export function Order ({ order }) {
