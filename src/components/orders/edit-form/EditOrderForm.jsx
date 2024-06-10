@@ -1,6 +1,7 @@
-import './EditOrderForm.css'
+import '../../EditForm.css'
 
-import { useField } from '../../hooks/useField'
+import { useField } from '../../../hooks/useField'
+import { PropTypes } from 'prop-types'
 
 export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
   const number = useField({ initValue: order.number })
@@ -32,7 +33,7 @@ export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
   }
   return (
     <>
-      <div className={hiddenEdit ? 'edit-form-hidden' : 'edit-form'}>
+      <div className={hiddenEdit && 'edit-form-hidden'}>
         <form onSubmit={handleSubmit}>
           <input
             {...number}
@@ -52,4 +53,10 @@ export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
       </div>
     </>
   )
+}
+
+EditOrderForm.propTypes = {
+  order: PropTypes.object,
+  hiddenEdit: PropTypes.bool,
+  setHiddenEdit: PropTypes.function
 }

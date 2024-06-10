@@ -1,15 +1,16 @@
 import { useState } from 'react'
-import { EditOrderButton } from './EditOrderButton'
-import { EditOrderForm } from './EditOrderForm'
-import './Order.css'
+import { EditOrderButton } from './edit-form/EditOrderButton'
+import { EditOrderForm } from './edit-form/EditOrderForm'
+import '../Element.css'
 import { DeleteOrder } from './DeleteOrder'
+import { PropTypes } from 'prop-types'
 
 export function Order ({ order }) {
   const [hiddenEdit, setHiddenEdit] = useState(true)
   return (
     <li className='order' key={order.id}>
       <div className='order-complete'>
-        <div className='order-and-buttons'>
+        <div className='element-and-buttons'>
           <details>
             <summary>{order.number}</summary>
             <article className='order-details'>
@@ -28,4 +29,8 @@ export function Order ({ order }) {
       </div>
     </li>
   )
+}
+
+Order.propTypes = {
+  order: PropTypes.object
 }

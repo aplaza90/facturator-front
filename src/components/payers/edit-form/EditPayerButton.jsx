@@ -1,8 +1,9 @@
 import { useId } from 'react'
-import './EditOrderButton.css'
-import { EdiIcon } from '../Icons'
+import { PropTypes } from 'prop-types'
+import '../../EditButton.css'
+import { EdiIcon } from '../../Icons.jsx'
 
-export function EditOrderButton ({ hiddenEdit, setHiddenEdit }) {
+export function EditPayerButton ({ hiddenEdit, setHiddenEdit }) {
   const formCheckboxId = useId()
   const handleChange = () => {
     setHiddenEdit(!hiddenEdit)
@@ -15,4 +16,8 @@ export function EditOrderButton ({ hiddenEdit, setHiddenEdit }) {
       <input id={formCheckboxId} onChange={handleChange} type='checkbox' style={{ display: 'none' }} />
     </>
   )
+}
+EditPayerButton.propTypes = {
+  hiddenEdit: PropTypes.boolean,
+  setHiddenEdit: PropTypes.function
 }

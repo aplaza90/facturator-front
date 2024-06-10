@@ -1,6 +1,6 @@
-import './EditPayerForm.css'
-
-import { useField } from '../../hooks/useField'
+import '../../EditForm.css'
+import { useField } from '../../../hooks/useField'
+import { PropTypes } from 'prop-types'
 
 export function EditPayerForm ({ payer, hiddenEdit, setHiddenEdit }) {
   const name = useField({ initValue: payer.name })
@@ -36,7 +36,7 @@ export function EditPayerForm ({ payer, hiddenEdit, setHiddenEdit }) {
   }
   return (
     <>
-      <div className={hiddenEdit ? 'edit-form-hidden' : 'edit-form'}>
+      <div className={hiddenEdit && 'edit-form-hidden'}>
         <form onSubmit={handleSubmit}>
           <input
             {...name}
@@ -62,4 +62,9 @@ export function EditPayerForm ({ payer, hiddenEdit, setHiddenEdit }) {
       </div>
     </>
   )
+}
+EditPayerForm.propTypes = {
+  payer: PropTypes.object,
+  hiddenEdit: PropTypes.boolean,
+  setHiddenEdit: PropTypes.function
 }

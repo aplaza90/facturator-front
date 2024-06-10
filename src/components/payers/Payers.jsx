@@ -1,10 +1,12 @@
 import { Payer } from './Payer'
-// eslint-disable-next-line react/prop-types
+import { PropTypes } from 'prop-types'
+
 export function ListOfPayers ({ payers }) {
   return (
     <ul className='payers'>
       {
         payers.map(payer => (
+          // eslint-disable-next-line react/jsx-key
           <Payer payer={payer} />
         ))
       }
@@ -12,6 +14,7 @@ export function ListOfPayers ({ payers }) {
     </ul>
   )
 }
+ListOfPayers.propTypes = { payers: PropTypes.object }
 
 export function NoPayersResult () {
   return (
@@ -28,3 +31,4 @@ export function Payers ({ payers }) {
       : <NoPayersResult />
   )
 }
+Payers.propTypes = { payers: PropTypes.object }

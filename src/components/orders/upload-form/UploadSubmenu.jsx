@@ -1,4 +1,5 @@
 import { useState, useId } from 'react'
+import { PropTypes } from 'prop-types'
 
 export function UploadSubmenu () {
   const [file, setFile] = useState(null)
@@ -22,7 +23,7 @@ export function UploadSubmenu () {
       try {
         const result = await fetch('http://localhost:5005/order', {
           method: 'POST',
-          body: formData,
+          body: formData
         })
 
         const data = await result.json()
@@ -82,3 +83,5 @@ const Result = ({ status }) => {
     return null
   }
 }
+
+Result.propTypes = { status: PropTypes.string }

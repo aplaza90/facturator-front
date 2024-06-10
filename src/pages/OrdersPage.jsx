@@ -4,7 +4,7 @@ import { Orders } from '../components/orders/Orders'
 import { Link } from '../components/Link'
 import './OrdersPage.css'
 import { OrderSearchContext } from '../context/orderSearch'
-import { UploadFileForm } from '../components/orders/UploadFileForm'
+import { UploadFileForm } from '../components/orders/upload-form/UploadFileForm'
 
 export function OrdersPage () {
   const {

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { EditPayerButton } from './EditPayerButton'
-import { EditPayerForm } from './EditPayerForm'
-import './Payer.css'
+import { PropTypes } from 'prop-types'
+import { EditPayerButton } from './edit-form/EditPayerButton'
+import { EditPayerForm } from './edit-form/EditPayerForm'
+import '../Element.css'
 import { DeletePayer } from './DeletePayer'
 
 export function Payer ({ payer }) {
@@ -9,7 +10,7 @@ export function Payer ({ payer }) {
   return (
     <li className='payer' key={payer.id}>
       <div className='payer-complete'>
-        <div className='payer-and-buttons'>
+        <div className='element-and-buttons'>
           <details>
             <summary>{payer.name}</summary>
             <article className='payer-details'>
@@ -30,3 +31,4 @@ export function Payer ({ payer }) {
     </li>
   )
 }
+Payer.propTypes = { payer: PropTypes.object }

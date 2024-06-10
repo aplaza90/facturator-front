@@ -1,6 +1,6 @@
-import { useId } from "react";
-import { UploadIcon } from "../Icons";
-import { UploadSubmenu } from "./UploadSubmenu";
+import { useId } from 'react'
+import { UploadIcon } from '../../Icons'
+import { UploadSubmenu } from './UploadSubmenu'
 import './UploadFileForm.css'
 
 export function UploadFileForm () {

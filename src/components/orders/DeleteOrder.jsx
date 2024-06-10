@@ -1,8 +1,9 @@
 import { useContext, useId, useState } from 'react'
 import { DeleteIcon } from '../Icons'
-import './DeleteOrder.css'
+import '../DeleteElement.css'
 import { deleteOrder } from '../../services/orders'
 import { OrderSearchContext } from '../../context/orderSearch'
+import { PropTypes } from 'prop-types'
 
 export function DeleteOrder ({ id }) {
   const deleteCheckboxId = useId()
@@ -31,3 +32,5 @@ export function DeleteOrder ({ id }) {
     </>
   )
 }
+
+DeleteOrder.propTypes = { id: PropTypes.string }
