@@ -4,6 +4,7 @@ import { Payers } from '../components/payers/Payers'
 import { Link } from '../components/Link'
 import { PayerSearchContext } from '../context/payerSearch'
 import './PayersPage.css'
+import { AddPayerForm } from '../components/payers/add-form/addForm'
 
 export function PayersPage () {
   const {
@@ -31,10 +32,13 @@ export function PayersPage () {
     <div className='page'>
       <header className='page-header'>
         <h1>Lista de pagadores</h1>
-        <form className='form' onSubmit={handleSubmit}>
-          <input onChange={handleChange} value={search} name='query' placeholder='Name' />
-          <button>Buscar</button>
-        </form>
+        <div>
+          <form className='form' onSubmit={handleSubmit}>
+            <input onChange={handleChange} value={search} name='query' placeholder='Name' />
+            <button>Buscar</button>
+          </form>
+          <AddPayerForm />
+        </div>
         {error}
       </header>
 

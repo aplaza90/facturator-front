@@ -5,6 +5,7 @@ import { Link } from '../components/Link'
 import './OrdersPage.css'
 import { OrderSearchContext } from '../context/orderSearch'
 import { UploadFileForm } from '../components/orders/upload-form/UploadFileForm'
+import { AddOrderForm } from '../components/orders/add-form/addForm'
 
 export function OrdersPage () {
   const {
@@ -38,6 +39,7 @@ export function OrdersPage () {
             <button>Buscar</button>
           </form>
           <UploadFileForm />
+          <AddOrderForm />
         </div>
         {error}
       </header>
