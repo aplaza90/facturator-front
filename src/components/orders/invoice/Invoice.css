@@ -1,0 +1,60 @@
+.invoice-menu {
+  background-color: #161f27;
+  opacity: 0.95;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  max-width: 90vh;
+  max-height: 90vh;
+  top: 10%;
+  left: 30%;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 2;
+  overflow:scroll;
+}
+
+.invoice-menu-hidden {
+  display: none;
+}
+
+.invoice-button {
+  cursor: pointer;
+}
+
+header {
+  display: 'flex';
+  width: 100%;
+}
+
+.persons-data {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.invoice-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space space-between;
+  gap: 30px;
+}
+
+.bottom-tables {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.taxes-table {
+  width: 50%;
+}
+
+.detail-taxes {
+  width: 30%;
+}

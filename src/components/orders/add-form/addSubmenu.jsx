@@ -37,7 +37,7 @@ export function AddOrderSubmenu () {
 
   return (
     <>
-      <h1>Add Order</h1>
+      <h1>Añadir Factura</h1>
       <form
         style={{
           display: 'flex',

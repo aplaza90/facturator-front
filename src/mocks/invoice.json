@@ -1,0 +1,36 @@
+
+{
+"Total_a_pagar": "530.00€",
+"client_address": "Urb. Lsdafasos Arroyos, C/Ocho, Bloque B, 1B",
+"client_zip_code": "28280",
+"client_province": "Madrid",
+"client_city": "El Escorial",
+"client_name": "AMAIA ACHALANDABASO DEL RIO",
+"client_nif": "53660677K",
+"discount_qty": "0.00€",
+"invoice_date": "Tue, 27 Feb 2024 00:00:00 GMT",
+"invoice_number": "TEST-0001",
+"irpf_qty": "0.00€",
+"iva_qty": "0.00€",
+"logo_path": "/src/facturator/service_layer/invoice_generator/static/logo.png",
+"order_lines": [
+  {
+    "price": 50,
+    "subtotal": "350.00",
+    "units": "7.00"
+  },
+  {
+    "price": 60,
+    "subtotal": "180.00",
+    "units": "3.00"
+  }
+],
+"professional_address": "5678 Some Avenue",
+"professional_zip_code": "23230",
+"professional_city": "Almendralejo, SP",
+"professional_province": "Madrid",
+"professional_email": "some.pro@example.com",
+"professional_name": "Some Professional",
+"professional_nif": "987654321",
+"total_bi": "530.00€"
+}

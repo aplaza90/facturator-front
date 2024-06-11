@@ -4,6 +4,7 @@ import { EditOrderForm } from './edit-form/EditOrderForm'
 import '../Element.css'
 import { DeleteOrder } from './DeleteOrder'
 import { PropTypes } from 'prop-types'
+import { InvoiceButton } from './invoice/InvoiceButton'
 
 export function Order ({ order }) {
   const [hiddenEdit, setHiddenEdit] = useState(true)
@@ -23,6 +24,7 @@ export function Order ({ order }) {
           <div className='button-box'>
             <EditOrderButton hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} />
             <DeleteOrder id={order.id} />
+            <InvoiceButton number={order.number} />
           </div>
         </div>
         <EditOrderForm order={order} hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} />

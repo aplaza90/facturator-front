@@ -5,6 +5,7 @@ export function ListOfOrders ({ orders }) {
     <ul className='orders'>
       {
         orders.map(order => (
+          // eslint-disable-next-line react/jsx-key
           <Order order={order} />
         ))
       }

@@ -30,3 +30,15 @@ export const deleteOrder = async ({ id }) => {
     throw new Error('Error while retrieving and parsing orders')
   }
 }
+
+export const getOrderInvoice = async ({ number }) => {
+  const url = `http://localhost:5005/invoice?number=${number}`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+
+    return json
+  } catch (e) {
+    throw new Error('Error while retrieving the invoice details')
+  }
+}

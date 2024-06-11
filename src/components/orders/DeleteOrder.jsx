@@ -25,8 +25,8 @@ export function DeleteOrder ({ id }) {
       <aside className={hiddenDelete ? 'delete-menu-hidden' : 'delete-menu'}>
         <h4>Se borrará el elemento</h4>
         <div className='buttons'>
-          <button onClick={handleDeleteClick}>Delete</button>
-          <button onClick={() => setHiddenDelete(true)}>Cancel</button>
+          <button onClick={handleDeleteClick}>Borrar</button>
+          <button onClick={() => setHiddenDelete(true)}>Cancelar</button>
         </div>
       </aside>
     </>
