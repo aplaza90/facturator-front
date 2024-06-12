@@ -3,7 +3,7 @@ import '../../EditForm.css'
 import { useField } from '../../../hooks/useField'
 import { PropTypes } from 'prop-types'
 
-export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
+export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit, setPrinted }) {
   const number = useField({ initValue: order.number })
   const date = useField({ initValue: order.date })
   const payerName = useField({ initValue: order.payer_name })
@@ -12,6 +12,7 @@ export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
   const handleSubmit = (event) => {
     event.preventDefault()
     setHiddenEdit(true)
+    setPrinted(false)
     const data = {
       number: number.value,
       date: date.value,
@@ -58,5 +59,6 @@ export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit }) {
 EditOrderForm.propTypes = {
   order: PropTypes.object,
   hiddenEdit: PropTypes.bool,
-  setHiddenEdit: PropTypes.function
+  setHiddenEdit: PropTypes.function,
+  setPrinted: PropTypes.function
 }

@@ -3,10 +3,10 @@ import { PropTypes } from 'prop-types'
 import { DownloadIcon } from '../../Icons'
 import './Invoice.css'
 import { InvoiceDetail } from './InvoiceDetail'
-import { getOrderInvoice } from '../../../services/orders'
+import { getOrderInvoice, getOrderPdfBlob } from '../../../services/orders'
 import invoice from '../../../mocks/invoice.json'
 
-export function InvoiceButton ({ number }) {
+export function InvoiceButton ({ number, setPrinted }) {
   const invoiceCheckboxId = useId()
   const [hiddenInvoice, setHiddenInvoice] = useState(true)
   const [invoiceData, setInvoiceData] = useState(invoice)
@@ -16,6 +16,26 @@ export function InvoiceButton ({ number }) {
     console.log(newData)
     setInvoiceData(newData)
     setHiddenInvoice(false)
+  }
+
+  const handlePrint = async () => {
+    console.log('hola')
+    try {
+      const blob = await getOrderPdfBlob({ number })
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `factura_${number}.pdf`
+      document.body.appendChild(a)
+      a.click()
+
+      document.body.removeChild(a)
+      window.URL.revokeObjectURL(url)
+
+      setPrinted(true)
+    } catch (e) {
+      console.error('There was an error downloading the PDF:', e)
+    }
   }
 
   return (
@@ -29,9 +49,13 @@ export function InvoiceButton ({ number }) {
         <InvoiceDetail invoice={invoiceData} />
         <div className='buttons'>
           <button onClick={() => setHiddenInvoice(true)}>Cerrar</button>
+          <button onClick={handlePrint}>Imprimir</button>
         </div>
       </aside>
     </>
   )
 }
-InvoiceButton.propTypes = { number: PropTypes.string }
+InvoiceButton.propTypes = {
+  number: PropTypes.string,
+  setPrinted: PropTypes.function
+}

@@ -1,3 +1,4 @@
+import { formatDate } from '../Order'
 // eslint-disable-next-line react/prop-types
 export function InvoiceDetail ({ invoice }) {
   return (
@@ -5,29 +6,29 @@ export function InvoiceDetail ({ invoice }) {
       <header style={{ display: 'flex' }}>
         <section className='invoice-data'>
           <h4>Datos de la Factura</h4>
-          <p>Número: {invoice.invoice_number}</p>
-          <p>Fecha: {invoice.invoice_date}</p>
+          <p>{invoice.invoice_number}</p>
+          <p>{formatDate({ dateString: invoice.invoice_date })}</p>
         </section>
       </header>
 
       <div className='persons-data'>
         <section className='payer-data'>
           <h4>Datos del Pagador</h4>
-          <p>Nombre: {invoice.client_name}</p>
-          <p>Dirección: {invoice.client_address}</p>
+          <p>{invoice.client_name}</p>
+          <p>{invoice.client_address}</p>
           <p>
             {invoice.client_zip_code} {invoice.client_city}, {invoice.client_province}
           </p>
-          <p>NIF: {invoice.client_nif}</p>
+          <p>{invoice.client_nif}</p>
         </section>
         <section className='professional-data'>
           <h4>Datos del Beneficiario</h4>
-          <p>Nombre: {invoice.professional_name}</p>
-          <p>Dirección: {invoice.professional_address}</p>
+          <p>{invoice.professional_name}</p>
+          <p>{invoice.professional_address}</p>
           <p>
             {invoice.professional_zip_code} {invoice.professional_city}, {invoice.professional_province}
           </p>
-          <p>NIF: {invoice.professional_nif}</p>
+          <p>{invoice.professional_nif}</p>
         </section>
       </div>
 

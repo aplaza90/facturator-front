@@ -1,7 +1,7 @@
 export const searchOrders = async ({ search }) => {
   const url = (search === '')
     ? 'http://localhost:5005/order'
-    : `http://localhost:5005/order?number=${search}`
+    : `http://localhost:5005/order?payer_name=${search}`
 
   try {
     const response = await fetch(url)
@@ -40,5 +40,17 @@ export const getOrderInvoice = async ({ number }) => {
     return json
   } catch (e) {
     throw new Error('Error while retrieving the invoice details')
+  }
+}
+
+export const getOrderPdfBlob = async ({ number }) => {
+  const url = `http://localhost:5005/pdf?number=${number}`
+  try {
+    const response = await fetch(url)
+    const blob = await response.blob()
+
+    return blob
+  } catch (e) {
+    throw new Error('Error while retrieving the invoice pdf')
   }
 }

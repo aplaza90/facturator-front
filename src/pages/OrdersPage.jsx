@@ -7,6 +7,10 @@ import { OrderSearchContext } from '../context/orderSearch'
 import { UploadFileForm } from '../components/orders/upload-form/UploadFileForm'
 import { AddOrderForm } from '../components/orders/add-form/addForm'
 
+const sortOrders = ({ orders }) => {
+  return orders.sort((a, b) => new Date(a.date) - new Date(b.date))
+}
+
 export function OrdersPage () {
   const {
     search, updateSearch, error, orders, getOrders
@@ -45,7 +49,7 @@ export function OrdersPage () {
       </header>
 
       <main>
-        <Orders orders={orders} />
+        <Orders orders={sortOrders({ orders })} />
       </main>
       <Link to='/'>Pagadores</Link>
     </div>
