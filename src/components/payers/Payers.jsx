@@ -18,7 +18,7 @@ ListOfPayers.propTypes = { payers: PropTypes.object }
 
 export function NoPayersResult () {
   return (
-    <p>No se encontraron pacientes</p>
+    <p>No se encontraron pagadores</p>
   )
 }
 

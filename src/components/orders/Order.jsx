@@ -5,6 +5,7 @@ import '../Element.css'
 import { DeleteOrder } from './DeleteOrder'
 import { PropTypes } from 'prop-types'
 import { InvoiceButton } from './invoice/InvoiceButton'
+import { Button } from 'flowbite-react'
 
 export const formatDate = ({ dateString }) => {
   const date = new Date(dateString)

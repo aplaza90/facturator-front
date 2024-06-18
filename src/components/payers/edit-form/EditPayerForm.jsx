@@ -1,6 +1,7 @@
 import '../../EditForm.css'
 import { useField } from '../../../hooks/useField'
 import { PropTypes } from 'prop-types'
+import { CustomInput } from '../../InputField'
 
 export function EditPayerForm ({ payer, hiddenEdit, setHiddenEdit }) {
   const name = useField({ initValue: payer.name })
@@ -37,23 +38,23 @@ export function EditPayerForm ({ payer, hiddenEdit, setHiddenEdit }) {
   return (
     <>
       <div className={hiddenEdit && 'edit-form-hidden'}>
-        <form onSubmit={handleSubmit}>
-          <input
+        <form onSubmit={handleSubmit} className='text-black'>
+          <CustomInput
             {...name}
           />
-          <input
+          <CustomInput
             {...nif}
           />
-          <input
+          <CustomInput
             {...address}
           />
-          <input
+          <CustomInput
             {...zipCode}
           />
-          <input
+          <CustomInput
             {...city}
           />
-          <input
+          <CustomInput
             {...province}
           />
           <button>Editar</button>

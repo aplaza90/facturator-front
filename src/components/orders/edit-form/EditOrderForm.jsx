@@ -2,6 +2,7 @@ import '../../EditForm.css'
 
 import { useField } from '../../../hooks/useField'
 import { PropTypes } from 'prop-types'
+import { CustomInput } from '../../InputField'
 
 export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit, setPrinted }) {
   const number = useField({ initValue: order.number })
@@ -36,16 +37,16 @@ export function EditOrderForm ({ order, hiddenEdit, setHiddenEdit, setPrinted })
     <>
       <div className={hiddenEdit && 'edit-form-hidden'}>
         <form onSubmit={handleSubmit}>
-          <input
+          <CustomInput
             {...number}
           />
-          <input
+          <CustomInput
             {...date}
           />
-          <input
+          <CustomInput
             {...payerName}
           />
-          <input
+          <CustomInput
             {...quantity}
           />
           <button>Editar</button>
