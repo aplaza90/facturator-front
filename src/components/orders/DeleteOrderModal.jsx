@@ -3,19 +3,19 @@ import '../DeleteElement.css'
 import { deleteOrder } from '../../services/orders'
 import { OrderSearchContext } from '../../context/orderSearch'
 import { PropTypes } from 'prop-types'
-import { DeleteButton } from '../DeleteButton'
+import { DeleteModal } from '../DeleteModal'
 
-export function DeleteOrder ({ id }) {
+export function DeleteOrderModal ({ id }) {
   const { search, getOrders } = useContext(OrderSearchContext)
 
-  const handleDeleteClick = async () => {
+  const handleDelete = async () => {
     await deleteOrder({ id })
     getOrders({ search })
   }
 
   return (
-    <DeleteButton handleDeleteClick={handleDeleteClick} />
+    <DeleteModal handleDelete={handleDelete} />
   )
 }
 
-DeleteOrder.propTypes = { id: PropTypes.string }
+DeleteOrderModal.propTypes = { id: PropTypes.string }

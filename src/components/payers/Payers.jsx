@@ -6,8 +6,7 @@ export function ListOfPayers ({ payers }) {
     <ul className='payers'>
       {
         payers.map(payer => (
-          // eslint-disable-next-line react/jsx-key
-          <Payer payer={payer} />
+          <Payer key={payer.id} payer={payer} />
         ))
       }
 

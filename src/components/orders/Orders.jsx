@@ -1,12 +1,12 @@
 import { Order } from './Order'
-// eslint-disable-next-line react/prop-types
+import { PropTypes } from 'prop-types'
+
 export function ListOfOrders ({ orders }) {
   return (
     <ul className='orders'>
       {
         orders.map(order => (
-          // eslint-disable-next-line react/jsx-key
-          <Order order={order} />
+          <Order key={order.id} order={order} />
         ))
       }
 
@@ -29,3 +29,6 @@ export function Orders ({ orders }) {
       : <NoOrdersResult />
   )
 }
+
+ListOfOrders.propTypes = { orders: PropTypes.array }
+Orders.propTypes = { orders: PropTypes.array }

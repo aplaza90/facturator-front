@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { PropTypes } from 'prop-types'
 import '../Element.css'
-import { DeletePayer } from './DeletePayer'
+import { DeletePayerModal } from './DeletePayerModal'
 import { EditButton } from '../EditButton'
 import { PayerForm } from './PayerForm'
 
@@ -23,7 +23,7 @@ export function Payer ({ payer }) {
           </details>
           <div className='button-box'>
             <EditButton onChange={() => { setHiddenEdit(!hiddenEdit) }} />
-            <DeletePayer id={payer.id} />
+            <DeletePayerModal id={payer.id} />
           </div>
         </div>
         {!hiddenEdit && <PayerForm payer={payer} />}

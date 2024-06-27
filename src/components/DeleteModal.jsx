@@ -1,18 +1,14 @@
 import { Button, Modal } from 'flowbite-react'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { HiOutlineExclamationCircle } from 'react-icons/hi'
-import { OrderSearchContext } from '../../context/orderSearch'
-import { deleteOrder } from '../../services/orders'
 import { PropTypes } from 'prop-types'
-import { DeleteIcon } from '../Icons'
+import { DeleteIcon } from './Icons'
 
-export function DeleteModal ({ id }) {
+export function DeleteModal ({ handleDelete }) {
   const [openModal, setOpenModal] = useState(false)
-  const { search, getOrders } = useContext(OrderSearchContext)
 
   const handleDeleteClick = async () => {
-    await deleteOrder({ id })
-    getOrders({ search })
+    handleDelete()
     setOpenModal(false)
   }
 
@@ -28,7 +24,7 @@ export function DeleteModal ({ id }) {
           <div className='text-center'>
             <HiOutlineExclamationCircle className='mx-auto mb-4 h-14 w-14 text-zinc-50' />
             <h3 className='mb-5 text-lg font-normal text-zinc-50'>
-              Estas seguro de borrar la siguiente factura?
+              Estas seguro de borrar el elemento?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteClick}>
@@ -45,4 +41,4 @@ export function DeleteModal ({ id }) {
   )
 }
 
-DeleteModal.propTypes = { id: PropTypes.string }
+DeleteModal.propTypes = { handleDelete: PropTypes.function }
