@@ -3,8 +3,9 @@ import debounce from 'just-debounce-it'
 import { Payers } from '../components/payers/Payers'
 import { PayerSearchContext } from '../context/payerSearch'
 import './PayersPage.css'
-import { AddPayerForm } from '../components/payers/add-form/addForm'
 import { Button } from 'flowbite-react'
+import { TestAddElementModal } from '../components/TestAddElementModal'
+import { PayerForm } from '../components/payers/PayerForm'
 
 export function PayersPage () {
   const {
@@ -42,7 +43,9 @@ export function PayersPage () {
             >Buscar
             </Button>
           </form>
-          <AddPayerForm />
+          <TestAddElementModal text='Añadir Pagador'>
+            <PayerForm />
+          </TestAddElementModal>
         </div>
         {error}
       </header>

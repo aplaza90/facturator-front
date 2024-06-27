@@ -1,5 +1,6 @@
-import { Button, Navbar } from 'flowbite-react'
+import { Navbar } from 'flowbite-react'
 import { Link } from '../components/Link'
+import { LoginModal } from './LoginModal'
 
 export function AppNavbar () {
   return (
@@ -8,7 +9,7 @@ export function AppNavbar () {
         <span className='self-center whitespace-nowrap text-xl text-facturator-50 font-semibold'>Facturator APP</span>
       </Navbar.Brand>
       <div className='flex md:order-2'>
-        <Button className='bg-gradient-to-r from-woodsmoke-600 to-woodsmoke-900'>Loig In</Button>
+        <LoginModal />
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

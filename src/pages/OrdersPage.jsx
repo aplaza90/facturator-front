@@ -4,8 +4,9 @@ import { Orders } from '../components/orders/Orders'
 import './OrdersPage.css'
 import { OrderSearchContext } from '../context/orderSearch'
 import { UploadFileForm } from '../components/orders/upload-form/UploadFileForm'
-import { AddOrderForm } from '../components/orders/add-form/addForm'
 import { Button } from 'flowbite-react'
+import { TestAddElementModal } from '../components/TestAddElementModal'
+import { OrderForm } from '../components/orders/OrderForm'
 
 const sortOrders = ({ orders }) => {
   return orders.sort((a, b) => new Date(a.date) - new Date(b.date))
@@ -48,7 +49,9 @@ export function OrdersPage () {
             </Button>
           </form>
           <UploadFileForm />
-          <AddOrderForm />
+          <TestAddElementModal text='Añadir factura'>
+            <OrderForm />
+          </TestAddElementModal>
         </div>
         {error}
       </header>
