@@ -6,7 +6,7 @@ import { InvoiceDetail } from './InvoiceDetail'
 import { getOrderInvoice, getOrderPdfBlob } from '../../../services/orders'
 import invoice from '../../../mocks/invoice.json'
 
-export function InvoiceButton ({ number, setPrinted }) {
+export function InvoiceButton ({ number }) {
   const invoiceCheckboxId = useId()
   const [hiddenInvoice, setHiddenInvoice] = useState(true)
   const [invoiceData, setInvoiceData] = useState(invoice)
@@ -31,8 +31,6 @@ export function InvoiceButton ({ number, setPrinted }) {
 
       document.body.removeChild(a)
       window.URL.revokeObjectURL(url)
-
-      setPrinted(true)
     } catch (e) {
       console.error('There was an error downloading the PDF:', e)
     }

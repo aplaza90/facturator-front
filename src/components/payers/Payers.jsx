@@ -14,7 +14,7 @@ export function ListOfPayers ({ payers }) {
     </ul>
   )
 }
-ListOfPayers.propTypes = { payers: PropTypes.object }
+ListOfPayers.propTypes = { payers: PropTypes.array }
 
 export function NoPayersResult () {
   return (
@@ -31,4 +31,4 @@ export function Payers ({ payers }) {
       : <NoPayersResult />
   )
 }
-Payers.propTypes = { payers: PropTypes.object }
+Payers.propTypes = { payers: PropTypes.array }

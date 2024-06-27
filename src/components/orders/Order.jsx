@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { EditOrderButton } from './edit-form/EditOrderButton'
-import { EditOrderForm } from './edit-form/EditOrderForm'
 import '../Element.css'
 import { DeleteOrder } from './DeleteOrder'
 import { PropTypes } from 'prop-types'
 import { InvoiceButton } from './invoice/InvoiceButton'
-import { Button } from 'flowbite-react'
+import { OrderForm } from './OrderForm'
+import { EditButton } from '../EditButton'
 
 export const formatDate = ({ dateString }) => {
   const date = new Date(dateString)
@@ -17,7 +16,6 @@ export const formatDate = ({ dateString }) => {
 
 export function Order ({ order }) {
   const [hiddenEdit, setHiddenEdit] = useState(true)
-  const [printed, setPrinted] = useState(false)
   return (
     <li className='order' key={order.id}>
       <div className='order-complete'>
@@ -29,16 +27,15 @@ export function Order ({ order }) {
               <p>{formatDate({ dateString: order.date })}</p>
               <p>{order.payer_name}</p>
               <p>{order.quantity}</p>
-              <p>Descargada: {printed ? 'Si' : 'No'}</p>
             </article>
           </details>
           <div className='button-box'>
-            <EditOrderButton hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} />
+            <EditButton onChange={() => { setHiddenEdit(!hiddenEdit) }} />
             <DeleteOrder id={order.id} />
-            <InvoiceButton number={order.number} setPrinted={setPrinted} />
+            <InvoiceButton number={order.number} />
           </div>
         </div>
-        <EditOrderForm order={order} hiddenEdit={hiddenEdit} setHiddenEdit={setHiddenEdit} setPrinted={setPrinted} />
+        {!hiddenEdit && <OrderForm order={order} />}
       </div>
     </li>
   )

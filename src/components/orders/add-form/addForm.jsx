@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { AddIcon } from '../../Icons'
-import { AddOrderSubmenu } from './addSubmenu'
+import { OrderForm } from '../OrderForm'
 
 import './AddForm.css'
 
@@ -18,7 +18,7 @@ export function AddOrderForm () {
       />
 
       <aside className='add-order-submenu'>
-        <AddOrderSubmenu />
+        <OrderForm />
       </aside>
     </>
   )

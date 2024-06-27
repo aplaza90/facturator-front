@@ -1,8 +1,8 @@
 import { useId } from 'react'
 import { AddIcon } from '../../Icons'
-import { AddPayerSubmenu } from './addSubmenu'
 
 import './AddForm.css'
+import { PayerForm } from '../PayerForm'
 
 export function AddPayerForm () {
   const addCheckboxId = useId()
@@ -18,7 +18,7 @@ export function AddPayerForm () {
       />
 
       <aside className='add-payer-submenu'>
-        <AddPayerSubmenu />
+        <PayerForm />
       </aside>
     </>
   )
