@@ -80,7 +80,7 @@ export const PayerForm = ({ payer }) => {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col justify-around gap-5'
+        className='flex flex-col justify-around items-center gap-5'
       >
         <label className='form-label'>
           Nombre

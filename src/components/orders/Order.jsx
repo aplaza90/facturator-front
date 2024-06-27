@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import '../Element.css'
-import { DeleteOrder } from './DeleteOrder'
 import { PropTypes } from 'prop-types'
 import { InvoiceButton } from './invoice/InvoiceButton'
 import { OrderForm } from './OrderForm'
 import { EditButton } from '../EditButton'
+import { DeleteModal } from './TestDeleteModal'
 
 export const formatDate = ({ dateString }) => {
   const date = new Date(dateString)
@@ -31,7 +31,7 @@ export function Order ({ order }) {
           </details>
           <div className='button-box'>
             <EditButton onChange={() => { setHiddenEdit(!hiddenEdit) }} />
-            <DeleteOrder id={order.id} />
+            <DeleteModal id={order.id} />
             <InvoiceButton number={order.number} />
           </div>
         </div>
