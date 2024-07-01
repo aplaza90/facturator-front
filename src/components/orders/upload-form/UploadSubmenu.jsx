@@ -21,7 +21,7 @@ export function UploadSubmenu () {
       formData.append('file', file)
 
       try {
-        const result = await fetch('http://localhost:5005/orders/file', {
+        const result = await fetch('http://localhost:5005/api/orders/file', {
           method: 'POST',
           body: formData
         })

@@ -1,7 +1,7 @@
 export const searchPayers = async ({ search }) => {
   const url = (search === '')
-    ? 'http://localhost:5005/payers'
-    : `http://localhost:5005/payers?name=${search}`
+    ? 'http://localhost:5005/api/payers'
+    : `http://localhost:5005/api/payers?name=${search}`
 
   try {
     const response = await fetch(url)
@@ -22,7 +22,7 @@ export const searchPayers = async ({ search }) => {
 }
 
 export const deletePayer = async ({ id }) => {
-  const url = `http://localhost:5005/payers/${id}`
+  const url = `http://localhost:5005/api/payers/${id}`
   try {
     await fetch(url, { method: 'DELETE' })
     console.log('payer deleted')
@@ -34,7 +34,7 @@ export const deletePayer = async ({ id }) => {
 export const createPayer = async ({
   json_data: data
 }) => {
-  const url = 'http://localhost:5005/payers'
+  const url = 'http://localhost:5005/api/payers'
   try {
     const result = await fetch(url, {
       method: 'POST',
@@ -58,7 +58,7 @@ export const updatePayer = async ({
   payerId,
   json_data: data
 }) => {
-  const url = `http://localhost:5005/payers/${payerId}`
+  const url = `http://localhost:5005/api/payers/${payerId}`
   try {
     const result = await fetch(url, {
       method: 'PUT',

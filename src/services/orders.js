@@ -1,7 +1,7 @@
 export const searchOrders = async ({ search }) => {
   const url = (search === '')
-    ? 'http://localhost:5005/orders'
-    : `http://localhost:5005/orders?payer_name=${search}`
+    ? 'http://localhost:5005/api/orders'
+    : `http://localhost:5005/api/orders?payer_name=${search}`
 
   try {
     const response = await fetch(url)
@@ -20,7 +20,7 @@ export const searchOrders = async ({ search }) => {
 }
 
 export const deleteOrder = async ({ id }) => {
-  const url = `http://localhost:5005/orders/${id}`
+  const url = `http://localhost:5005/api/orders/${id}`
   try {
     await fetch(url, { method: 'DELETE' })
     console.log('order deleted')
@@ -32,7 +32,7 @@ export const deleteOrder = async ({ id }) => {
 export const createOrder = async ({
   json_data: data
 }) => {
-  const url = 'http://localhost:5005/orders'
+  const url = 'http://localhost:5005/api/orders'
   try {
     const result = await fetch(url, {
       method: 'POST',
@@ -56,7 +56,7 @@ export const updateOrder = async ({
   orderId,
   json_data: data
 }) => {
-  const url = `http://localhost:5005/orders/${orderId}`
+  const url = `http://localhost:5005/api/orders/${orderId}`
   try {
     const result = await fetch(url, {
       method: 'PUT',
@@ -77,7 +77,7 @@ export const updateOrder = async ({
 }
 
 export const getOrderInvoice = async ({ number }) => {
-  const url = `http://localhost:5005/invoices?number=${number}`
+  const url = `http://localhost:5005/api/invoices?number=${number}`
   try {
     const response = await fetch(url)
     const json = await response.json()
@@ -89,7 +89,7 @@ export const getOrderInvoice = async ({ number }) => {
 }
 
 export const getOrderPdfBlob = async ({ number }) => {
-  const url = `http://localhost:5005/pdfs?number=${number}`
+  const url = `http://localhost:5005/api/pdfs?number=${number}`
   try {
     const response = await fetch(url)
     const blob = await response.blob()
