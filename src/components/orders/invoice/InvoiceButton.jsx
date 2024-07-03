@@ -19,7 +19,6 @@ export function InvoiceButton ({ number }) {
   }
 
   const handlePrint = async () => {
-    console.log('hola')
     try {
       const blob = await getOrderPdfBlob({ number })
       const url = window.URL.createObjectURL(blob)
